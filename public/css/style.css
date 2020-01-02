@@ -1,0 +1,25 @@
+table {
+    border: 1px solid #000000;
+    border-collapse: collapse;
+}
+
+tr:hover {
+    background-color:bisque;
+}
+
+th {
+    background-color: #ff901e;
+    border: 1px solid #000000;
+}
+
+td {
+    border: 1px solid #000000;
+}
+
+td:hover {
+    background-color:darkkhaki;
+}
+
+.in {
+    display:inline;
+}

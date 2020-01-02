@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <% for(var i = 0; i < topic.length; i ++) { %>
+        <div>
+            <h2><%= topic[i].title %></h2>
+        </div>
+        <div>
+            <h3><%= topic[i].author %></h3>
+        </div>
+        <div>
+            <h3><%= topic[i].description %></h3>
+        </div>
+        <div>
+            <form action="/topic/<%= topic[i].id %>/modify" method="POST">
+                <input type="submit" value="수정"/> 
+            </form>
+            <form action="/topic/<%= topic[i].id %>/delete" method="POST">
+                <input type="submit" value="삭제"/>
+            </form>
+            <input type="button" value="목록" onclick="history.back()"/>
+        </div>
+        <hr>
+
+    <% } %>
+    
+    
+</body>
+</html>

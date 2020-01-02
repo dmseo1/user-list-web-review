@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="/css/style.css" />
+
+<body>
+    <h1>책 목록</h1>
+
+    <a href="/topic">Serverside Javascript</a>
+
+    <table>
+        <tr>
+            <th style='width:5%'>연번</th>
+            <th style='width:5%'>ID</th>
+            <th style='width:15%'>제목</th>
+            <th style='width:60%'>설명</th>
+            <th style='width:15%'>저자</th>
+        </tr>
+        <% for(var i = 0; i < data.length; i ++) {  %>
+            <tr>
+                <td><%= (i + 1) %></td>
+                <td><%= data[i].id %></td>
+                <td><a href="/topic/<%= data[i].id %>"><%= data[i].title %></a></td>
+                <td><%= data[i].description %></td>
+                <td><%= data[i].author %></td>
+            </tr>
+        <% } %>
+    </table>
+    <article>
+        <form action="/topic/add" method="POST">
+            <h2>새로운 책 입력</h2>
+            <div>
+                제목: 
+                <input type="text" style="width:70%" name="title" placeholder="제목을 입력하세요"/>                
+            </div>
+            <div>
+                내용: 
+                <textarea type="text" style="width:70%" rows="6" name="description" placeholder="내용을 입력하세요"></textarea>
+            </div>
+            <div>
+                저자: 
+                <input type="text" style="width:70%" name="author" placeholder="저자를 입력하세요"/>
+            </div>
+            <div>
+                <input type="submit" value="저장" />
+            </div>
+        </form>
+    </article>
+
+    
+</body>
+
+</html>

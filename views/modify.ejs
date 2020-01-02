@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>수정하기</h1>
+    <form method="POST" action="/topic/<%= data[0].id %>/modify/ok">
+        <div>
+            제목: <input type="text" style="width:70%" name="title" value="<%= data[0].title %>"/>        
+        </div>
+        <div>
+            내용: <input type="text" style="width:70%" name="description" value="<%= data[0].description %>"/>        
+        </div>
+        <div>
+            저자: <input type="text" style="width:70%" name="author" value="<%= data[0].author %>"/>        
+        </div>
+        
+        <input type="submit" value="수정"/>
+        <input type="button" value="취소" onclick="history.back()"/>
+    </form>
+   
+</body>
+</html>
